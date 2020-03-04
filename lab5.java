@@ -4,7 +4,9 @@ import java.util.Scanner;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-public class Main {
+import static java.lang.Math.abs;
+
+public class lab5 {
 
     public static boolean isBetween(int x, int lower, int upper) {
         return lower <= x && x <= upper;
@@ -126,6 +128,64 @@ public class Main {
         else
             System.out.println(price + "$");
     }
+    
+    public static void divisibleBy3(int n){
+            for(int i = 3; i < n; ++i){
+            if (i % 3 == 0) System.out.println(i);
+        }
+    }
+
+    public static void sumOfOddNUmbers(){
+        int n = Integer.parseInt(sc.nextLine());
+        int sum = 0;
+        for (int i = 1; n > 0; i += 2, n--) {
+            System.out.println(i);
+            sum += i;
+        }
+        System.out.printf("Sum: %d", sum);
+    }
+
+    String output = "Name: %s, Age: %d, Grade: %.2f";
+
+    public static void multiplicationTable(){
+        String output = "%d X %d = %d\n";
+        int number = Integer.parseInt(sc.nextLine());
+        printTable(number, 1);
+    }
+
+    public static String tableOutput = "%d X %d = %d\n";
+
+    public static void printTable(int number, int start){
+        for(int i = start; i <= 10; ++i)
+            System.out.printf(tableOutput, number, i, number * i);
+    }
+
+    public static void multiplicationTableV2(){
+        int number = Integer.parseInt(sc.nextLine());
+        int product = Integer.parseInt(sc.nextLine());
+        if (product > 10) System.out.printf(tableOutput, number, product, number*product);
+        else printTable(number, product);
+    }
+
+    public static void evenNumber(){
+        int number = Integer.parseInt(sc.nextLine());
+        while(number % 2 != 0) {
+            System.out.println("Please write an even number.");
+            number = Integer.parseInt(sc.nextLine());
+        }
+        System.out.println("The number is: " + abs(number));
+    }
+
+    public static void sumOfOddNUmbersV2(){
+        int n = Integer.parseInt(sc.nextLine());
+        int sum = 0;
+        for (int i = 0; i < n; ++i) {
+            System.out.println(2 * i + 1);
+            sum += 2 * i + 1;
+
+        }
+        System.out.printf("Sum: %d", sum);
+    }
 
     public static void main(String[] args) {
         // write your code here
@@ -134,6 +194,12 @@ public class Main {
 //        back_in_30();
 //        month_printer();
 //        foreign_languages();
-        theatre_promo();
+//        theatre_promo();
+//        write your code here
+//        divisibleBy3(100);
+//        sumOfOddNUmbers();
+//        multiplicationTableV2();
+//        evenNumber();
+        sumOfOddNUmbersV2();
     }
 }
